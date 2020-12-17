@@ -8,6 +8,16 @@ class EditUser extends LitElement {
   }
 
   // din kode her
+  constructor() {
+    super();
+
+    fetch('api/updateUser.php', {
+      method: 'POST',
+      body: user,
+    })
+    .then(res => {return res.json()});
+  }
+
 
 }
 customElements.define('edit-user', EditUser);
